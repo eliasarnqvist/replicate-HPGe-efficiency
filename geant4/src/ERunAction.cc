@@ -26,9 +26,11 @@ void ERunAction::BeginOfRunAction(const G4Run *run)
 void ERunAction::EndOfRunAction(const G4Run *run)
 {
     G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
+    // analysisManager->Write();
+    // analysisManager->Reset();
 
-    // Write data to our output root file
     analysisManager->Write();
+    analysisManager->CloseFile();
 
     G4int runID = run->GetRunID();
     G4cout << "Finishing run " << runID << G4endl;
@@ -37,6 +39,7 @@ void ERunAction::EndOfRunAction(const G4Run *run)
 void ERunAction::Initialize()
 {
     G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
+    // analysisManager->Reset();
     analysisManager->OpenFile(fileName);
     G4cout << "Root file opened" << G4endl;
 }
@@ -44,6 +47,7 @@ void ERunAction::Initialize()
 void ERunAction::Finalize()
 {
     G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
-    analysisManager->CloseFile();
+    // analysisManager->Write();
+    // analysisManager->CloseFile();
     G4cout << "Root file closed" << G4endl;
 }

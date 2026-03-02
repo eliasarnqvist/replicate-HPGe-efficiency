@@ -12,13 +12,20 @@
 /E_run_settings/histogramName cs137
 /gun/ion 55 137 0 0
 /process/had/rdm/nucleusLimits 137 137 55 55
-/run/printProgress 100
-/run/beamOn 1000
+/run/printProgress 10
+/run/beamOn 100
 
 /E_run_settings/histogramName co60
 /gun/ion 27 60 0 0
 /process/had/rdm/nucleusLimits 60 60 27 27
-/run/printProgress 100
-/run/beamOn 1000
+/run/printProgress 10
+/run/beamOn 100
+
+/E_run_settings/histogramName na22
+/gun/ion 11 22 0 0
+/process/had/rdm/nucleusLimits 22 22 11 11
+/run/printProgress 10
+/run/beamOn 100
 
 /E_run_settings/finalize
+

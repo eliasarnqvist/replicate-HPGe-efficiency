@@ -19,8 +19,8 @@ public:
     virtual void BeginOfRunAction(const G4Run *);
     virtual void EndOfRunAction(const G4Run *);
 
-    void Finalize();
-    void Initialize();
+    virtual void Finalize();
+    virtual void Initialize();
 
     G4String GetHistogramName() const 
     { 
