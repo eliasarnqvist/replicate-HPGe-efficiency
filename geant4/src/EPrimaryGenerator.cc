@@ -9,6 +9,10 @@ EPrimaryGenerator::EPrimaryGenerator()
 
     G4int n_particle = 1;
     fParticleGun  = new G4ParticleGun(n_particle);
+
+    fParticleGun->SetParticleEnergy(0*eV);
+    fParticleGun->SetParticlePosition(G4ThreeVector(0.,0.,0.));
+    fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
 }
 
 EPrimaryGenerator::~EPrimaryGenerator()
@@ -31,7 +35,6 @@ void EPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
         fParticleGun->SetParticleCharge(0. * eplus);
         fParticleGun->SetParticleEnergy(0 * eV);
         fParticleGun->SetParticlePosition(G4ThreeVector(0.,0.,sourcePosition));
-        fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
     }
 
     // Create vertex

@@ -9,6 +9,8 @@
 #include "G4UnitsTable.hh"
 #include "Randomize.hh"
 
+#include "ERunAction.hh"
+
 class ESensitiveDetector : public G4VSensitiveDetector
 {
 public:

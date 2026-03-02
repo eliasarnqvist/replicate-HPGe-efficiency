@@ -20,11 +20,10 @@ public:
     virtual void EndOfRunAction(const G4Run *);
 
     void Finalize();
+    void Initialize();
 
 private:
-    G4GenericMessenger *fMessenger;
-    G4String fileName, histogramName;
-    G4bool fFileOpen;
+
 };
 
 #endif
