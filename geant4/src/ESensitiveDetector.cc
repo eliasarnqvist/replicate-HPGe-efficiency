@@ -18,12 +18,14 @@ void ESensitiveDetector::Initialize(G4HCofThisEvent *)
 void ESensitiveDetector::EndOfEvent(G4HCofThisEvent *)
 {
     G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
-
-    G4int eventID = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
+    // G4int eventID = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
 
     if (fTotalEnergyDeposited > 0)
     {
-        analysisManager->FillH1(0, fTotalEnergyDeposited);
+        ERunAction* runAction = (ERunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
+        G4String histogramName = runAction->GetHistogramName();
+        G4int histId = analysisManager->GetH1Id(histogramName);
+        analysisManager->FillH1(histId, fTotalEnergyDeposited);
     }
 
     // G4cout << "Deposited energy: " << fTotalEnergyDeposited_0 << G4endl;
@@ -31,15 +33,10 @@ void ESensitiveDetector::EndOfEvent(G4HCofThisEvent *)
 
 G4bool ESensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *)
 {
-    G4int eventID = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
-
-    G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
+    // G4int eventID = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
+    // G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
 
     G4double fEnergyDeposited = aStep->GetTotalEnergyDeposit();
-
-    // G4StepPoint *preStepPoint = aStep->GetPreStepPoint();
-    // const G4VTouchable *touchable = aStep->GetPreStepPoint()->GetTouchable();
-    // G4int copyNo = touchable->GetCopyNumber(1);
 
     // G4cout << "Copy number: " << copyNo << G4endl;
 

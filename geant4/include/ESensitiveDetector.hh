@@ -16,7 +16,7 @@ class ESensitiveDetector : public G4VSensitiveDetector
 public:
     ESensitiveDetector(G4String);
     ~ESensitiveDetector();
-
+    
 private:
     G4double fTotalEnergyDeposited;
 

@@ -5,7 +5,7 @@ ERunAction::ERunAction()
     fMessenger = new G4GenericMessenger(this, "/E_run_settings/", "Settings for the run");
 	fMessenger->DeclareProperty("fileName", fileName, "Name of the output file");
     fMessenger->DeclareProperty("histogramName", histogramName, "Name of the histogram");
-    fMessenger->DeclareMethod("initilialize", &ERunAction::Initialize, "Open the output file");
+    fMessenger->DeclareMethod("initialize", &ERunAction::Initialize, "Open the output file");
     fMessenger->DeclareMethod("finalize", &ERunAction::Finalize, "Close the output file");
     
     fileName = "output_temporary.root";
