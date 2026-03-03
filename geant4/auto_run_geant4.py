@@ -10,18 +10,17 @@ import random
 # The radionuclides to simulate (Z, A, name)
 ZAs = [
     (55, 137, "cs137"),
-    (55, 137, "co60"),
-    (55, 137, "ba133"),
-    (55, 137, "am241"),
-    (55, 137, "co57"),
+    (27, 60, "co60"),
+    (56, 133, "ba133"),
+    (95, 241, "am241"),
+    (27, 57, "co57"),
     ]
 
 # Number of runs per setting
-# runs_per_radionuclide = 1e5
-runs_per_radionuclide = 1e3
+runs_per_radionuclide = 1e5
 
 # Number of random settings
-number_of_settings = 10
+number_of_settings = 1
 
 # Detector parameters to iterate over
 side_dead_layer_lims = [0.7, 3] # mm
@@ -67,13 +66,13 @@ for i_s in range(number_of_settings):
     macro_content += "/E_detector/sideDeadLayer " + str(side_dead_layer) + "\n"
     macro_content += "/E_detector/frontDeadLayer " + str(front_dead_layer) + "\n"
     macro_content += "/E_detector/frontSpace " + str(front_space) + "\n"
-    macro_content += "/E_source/sourcePosition " + str(source_position) + "\n"
 
     macro_content += "/run/reinitializeGeometry" + "\n"
     macro_content += "/run/initialize" + "\n"
 
     macro_content += "/process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year" + "\n"
     macro_content += "/gun/particle ion" + "\n"
+    macro_content += "/E_source/sourcePosition " + str(source_position) + "\n"
 
     macro_content += "/E_run_settings/initialize" + "\n"
 
@@ -86,7 +85,7 @@ for i_s in range(number_of_settings):
         macro_content += "/gun/ion " + str(Z) + " " + str(A) + " 0 0" + "\n"
         macro_content += "/process/had/rdm/nucleusLimits "+str(A)+" "+str(A)+" "+str(Z)+" "+str(Z)+"\n"
         macro_content += "/run/printProgress " + str(int(runs_per_radionuclide/10)) + "\n"
-        macro_content += "/run/beamOn " + str(int(runs_per_radionuclide))
+        macro_content += "/run/beamOn " + str(int(runs_per_radionuclide)) + "\n"
     
     macro_content += "/E_run_settings/finalize" + "\n"
 
