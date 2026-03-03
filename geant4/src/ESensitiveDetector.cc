@@ -22,10 +22,7 @@ void ESensitiveDetector::EndOfEvent(G4HCofThisEvent *)
 
     if (fTotalEnergyDeposited > 0)
     {
-        ERunAction* runAction = (ERunAction*)(G4RunManager::GetRunManager()->GetUserRunAction());
-        G4String histogramName = runAction->GetHistogramName();
-        G4int histId = analysisManager->GetH1Id(histogramName);
-        analysisManager->FillH1(histId, fTotalEnergyDeposited);
+        analysisManager->FillH1(0, fTotalEnergyDeposited);
     }
 
     // G4cout << "Deposited energy: " << fTotalEnergyDeposited_0 << G4endl;
