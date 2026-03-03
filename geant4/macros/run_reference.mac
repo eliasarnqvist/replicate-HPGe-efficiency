@@ -1,6 +1,6 @@
 /run/numberOfThreads 1
 
-/E_run_settings/fileName ../output/output_reference.root
+/E_run_settings/fileName ../resources/output_reference.root
 /E_detector/frontDeadLayer 0.7
 /E_detector/sideDeadLayer 0.7
 /E_detector/frontSpace 3.0
