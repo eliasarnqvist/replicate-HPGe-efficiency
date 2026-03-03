@@ -1,0 +1,47 @@
+/run/numberOfThreads 1
+
+/E_run_settings/fileName ../output/output_reference.root
+/E_detector/frontDeadLayer 0.7
+/E_detector/sideDeadLayer 0.7
+/E_detector/frontSpace 3.0
+
+/run/reinitializeGeometry
+/run/initialize
+
+/process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year
+/gun/particle ion
+
+/E_run_settings/initialize
+
+/E_run_settings/histogramName cs137
+/gun/ion 55 137 0 0
+/process/had/rdm/nucleusLimits 137 137 55 55
+/run/printProgress 1000
+/run/beamOn 10000
+
+/E_run_settings/histogramName co60
+/gun/ion 27 60 0 0
+/process/had/rdm/nucleusLimits 60 60 27 27
+/run/printProgress 1000
+/run/beamOn 10000
+
+/E_run_settings/histogramName ba133
+/gun/ion 56 133 0 0
+/process/had/rdm/nucleusLimits 133 133 56 56
+/run/printProgress 1000
+/run/beamOn 10000
+
+/E_run_settings/histogramName am241
+/gun/ion 95 241 0 0
+/process/had/rdm/nucleusLimits 241 241 95 95
+/run/printProgress 1000
+/run/beamOn 10000
+
+/E_run_settings/histogramName co57
+/gun/ion 27 57 0 0
+/process/had/rdm/nucleusLimits 57 57 27 27
+/run/printProgress 1000
+/run/beamOn 10000
+
+/E_run_settings/finalize
+

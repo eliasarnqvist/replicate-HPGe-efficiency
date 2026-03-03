@@ -22,11 +22,6 @@ public:
     virtual void Initialize();
     virtual void Finalize();
 
-    G4String GetHistogramName() const 
-    { 
-        return histogramName;
-    }
-
 private:
     G4GenericMessenger *fMessenger;
     G4String fileName, histogramName;

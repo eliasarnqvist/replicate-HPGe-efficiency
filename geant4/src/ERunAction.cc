@@ -20,7 +20,7 @@ ERunAction::~ERunAction()
 void ERunAction::BeginOfRunAction(const G4Run *run)
 {
     G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
-    analysisManager->CreateH1(histogramName, "Detected energy", 2048, 0, 2. * MeV);
+    analysisManager->CreateH1(histogramName, "Detected energy", 5000, 0, 5. * MeV);
 }
 
 void ERunAction::EndOfRunAction(const G4Run *run)
