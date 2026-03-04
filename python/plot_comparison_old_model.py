@@ -62,4 +62,5 @@ plt.tight_layout(pad = 0.2)
 save_name = 'comparison_old_model_rel_diff'
 plt.savefig(f'figures/{save_name}.jpg', dpi=300)
 plt.savefig(f'figures/{save_name}.pdf')
+
 plt.show()
