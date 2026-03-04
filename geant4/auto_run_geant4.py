@@ -7,13 +7,13 @@ import random
 
 # %% Settings
 
-# The radionuclides to simulate (Z, A, name)
+# The radionuclides to simulate (Z, A, name, source_position)
 ZAs = [
-    (55, 137, "cs137"),
-    (27, 60, "co60"),
-    (56, 133, "ba133"),
-    (95, 241, "am241"),
-    (27, 57, "co57"),
+    (55, 137, "cs137", 1.25),
+    (27, 60, "co60", 2.0),
+    (56, 133, "ba133", 1.25),
+    (95, 241, "am241", 1.25),
+    (27, 57, "co57", 1.0),
     ]
 
 # Number of runs per setting
@@ -26,7 +26,7 @@ number_of_settings = 1
 side_dead_layer_lims = [0.7, 3] # mm
 front_dead_layer_lims = [0.7, 3] # mm
 front_space_lims = [3, 8] # mm
-source_position = 1.25
+# source_position = 1.25
 
 number_of_threads = 16
 build_folder = "build/"
@@ -72,7 +72,6 @@ for i_s in range(number_of_settings):
 
     macro_content += "/process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year" + "\n"
     macro_content += "/gun/particle ion" + "\n"
-    macro_content += "/E_source/sourcePosition " + str(source_position) + "\n"
 
     macro_content += "/E_run_settings/initialize" + "\n"
 
@@ -80,7 +79,9 @@ for i_s in range(number_of_settings):
         Z = ZA[0]
         A = ZA[1]
         name = ZA[2]
+        source_position = ZA[3]
 
+        macro_content += "/E_source/sourcePosition " + str(source_position) + "\n"
         macro_content += "/E_run_settings/histogramName " + name + "\n"
         macro_content += "/gun/ion " + str(Z) + " " + str(A) + " 0 0" + "\n"
         macro_content += "/process/had/rdm/nucleusLimits "+str(A)+" "+str(A)+" "+str(Z)+" "+str(Z)+"\n"

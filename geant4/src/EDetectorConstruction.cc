@@ -69,7 +69,7 @@ G4VPhysicalVolume *EDetectorConstruction::Construct()
     G4LogicalVolume *logicDeadLayerSides = new G4LogicalVolume(solidDeadLayerSides, MatGe, "logicDeadLayerSides");
     G4VPhysicalVolume *physDeadLayerSides = new G4PVPlacement(0, G4ThreeVector(0., 0., -capThickness -frontSpace -0.5 * detectorSensitiveLength - frontDeadLayer), logicDeadLayerSides, "physDeadLayerSides", logicWorld, false, 0, checkOverlaps);
     G4Tubs *solidDeadLayerFront = new G4Tubs("solidDeadLayerFront", 0., 0.5 * detectorDiameter, 0.5 * frontDeadLayer, 0. * deg, sliceAngle);
-    G4LogicalVolume *logicDeadLayerFront = new G4LogicalVolume(solidDeadLayerFront, MatAl, "logicDeadLayerFront");
+    G4LogicalVolume *logicDeadLayerFront = new G4LogicalVolume(solidDeadLayerFront, MatGe, "logicDeadLayerFront");
     G4VPhysicalVolume *physDeadLayerFront = new G4PVPlacement(0, G4ThreeVector(0., 0., -capThickness -frontSpace -0.5 * frontDeadLayer), logicDeadLayerFront, "physDeadLayerFront", logicWorld, false, 0, checkOverlaps);
 
     // Crystal
