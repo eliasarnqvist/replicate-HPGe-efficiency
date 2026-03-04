@@ -54,7 +54,7 @@ for i_s in range(number_of_settings):
     front_space = random.uniform(front_space_lims[0], front_space_lims[1])
 
     print(f"Running setting {i_s + 1} of {number_of_settings}: ")
-    print(f"\side_dead_layer={side_dead_layer}, front_dead_layer={front_dead_layer}, front_space={front_space}")
+    print(f"\tside_dead_layer={side_dead_layer}, front_dead_layer={front_dead_layer}, front_space={front_space}")
 
     settings_name = "_setting_run_.root"
     file_name = output_folder + "threadoutput_" + str(i_s) + settings_name
