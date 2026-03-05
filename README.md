@@ -53,7 +53,7 @@ Before:
 
 After: 
 
-![Efficiency after](/python/figures/comparison_new_model_efficiency.jpg)
+![Efficiency after](/python/figures/comparison_best_model_efficiency.jpg)
 
 ## Limitations
 
