@@ -49,11 +49,11 @@ Data analysis is handled in a different directory (you need uproot, matplotlib, 
 
 Before: 
 
-    ![Efficiency before](python/figures/comparison_old_model_efficiency)
+![Efficiency before](python/figures/comparison_old_model_efficiency)
 
 After: 
 
-    ![Efficiency after](python/figures/comparison_new_model_efficiency)
+![Efficiency after](python/figures/comparison_new_model_efficiency)
 
 ## Limitations
 
