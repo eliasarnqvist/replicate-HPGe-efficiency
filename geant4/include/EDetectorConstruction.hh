@@ -38,7 +38,7 @@ private:
     ESensitiveDetector *sensDet = nullptr;
 
     G4GenericMessenger *fMessenger;
-    G4double frontDeadLayerR, sideDeadLayerR, frontSpaceR;
+    G4double frontDeadLayerR, sideDeadLayerR, frontSpaceR, capThicknessR;
 
     virtual void ConstructSDandField();
 };

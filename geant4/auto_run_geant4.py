@@ -23,10 +23,10 @@ runs_per_radionuclide = 1e5
 number_of_settings = 1
 
 # Detector parameters to iterate over
-side_dead_layer_lims = [0.7, 3] # mm
-front_dead_layer_lims = [0.7, 3] # mm
-front_space_lims = [3, 8] # mm
-# source_position = 1.25
+side_dead_layer_lims = [1.0, 3.0] # mm
+front_dead_layer_lims = [1.0, 2.0] # mm
+front_space_lims = [3.0, 6.0] # mm
+cap_thickness_lims = [1.0, 2.0] # mm
 
 number_of_threads = 16
 build_folder = "build/"
@@ -42,6 +42,7 @@ print("\tradionuclides: " + str(ZAs))
 print("\tside_dead_layer range: " + str(side_dead_layer_lims))
 print("\tfront_dead_layer range: " + str(front_dead_layer_lims))
 print("\tfront_space range: " + str(front_space_lims))
+print("\tcap_thickness range: " + str(cap_thickness_lims))
 
 start_time = time.time()
 time_interval = start_time
@@ -52,9 +53,10 @@ for i_s in range(number_of_settings):
     side_dead_layer = random.uniform(side_dead_layer_lims[0], side_dead_layer_lims[1])
     front_dead_layer = random.uniform(front_dead_layer_lims[0], front_dead_layer_lims[1])
     front_space = random.uniform(front_space_lims[0], front_space_lims[1])
+    cap_thickness = random.uniform(cap_thickness_lims[0], cap_thickness_lims[1])
 
     print(f"Running setting {i_s + 1} of {number_of_settings}: ")
-    print(f"\tside_dead_layer={side_dead_layer}, front_dead_layer={front_dead_layer}, front_space={front_space}")
+    print(f"\tside_dead_layer={side_dead_layer}, front_dead_layer={front_dead_layer}, front_space={front_space}, cap_thickness={cap_thickness}")
 
     settings_name = "_setting_run_.root"
     file_name = output_folder + "threadoutput_" + str(i_s) + settings_name
@@ -66,6 +68,7 @@ for i_s in range(number_of_settings):
     macro_content += "/E_detector/sideDeadLayer " + str(side_dead_layer) + "\n"
     macro_content += "/E_detector/frontDeadLayer " + str(front_dead_layer) + "\n"
     macro_content += "/E_detector/frontSpace " + str(front_space) + "\n"
+    macro_content += "/E_detector/capThickness " + str(cap_thickness) + "\n"
 
     macro_content += "/run/reinitializeGeometry" + "\n"
     macro_content += "/run/initialize" + "\n"
@@ -129,10 +132,12 @@ for i_s in range(number_of_settings):
             "side_dead_layer":side_dead_layer,
             "front_dead_layer":front_dead_layer,
             "front_space":front_space,
+            "cap_thickness":cap_thickness,
             "source_position":source_position,
             "runs":runs_per_radionuclide,
             "threads":number_of_threads,
             "time":simulated_minutes,
+            "thoughput":runs_per_radionuclide/(simulated_minutes*60*number_of_threads),
             },
         }
     with open(output_folder + "metadata.json", "w") as f:

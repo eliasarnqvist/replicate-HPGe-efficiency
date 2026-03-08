@@ -6,11 +6,13 @@ EDetectorConstruction::EDetectorConstruction()
 
     fMessenger->DeclareProperty("frontDeadLayer", frontDeadLayerR, "Front dead layer (mm)");
     fMessenger->DeclareProperty("sideDeadLayer", sideDeadLayerR, "Side dead layer (mm)");
-    fMessenger->DeclareProperty("frontSpace", frontSpaceR, "Front space between crystal and can (mm)");
+    fMessenger->DeclareProperty("frontSpace", frontSpaceR, "Front space between crystal and cap (mm)");
+    fMessenger->DeclareProperty("capThickness", capThicknessR, "Thickness of the cap (mm)");
 
     frontDeadLayerR = 0.7;
     sideDeadLayerR = 0.7;
     frontSpaceR = 3.0;
+    capThicknessR = 1.0;
 }
 
 EDetectorConstruction::~EDetectorConstruction()
@@ -23,6 +25,7 @@ G4VPhysicalVolume *EDetectorConstruction::Construct()
     G4double frontDeadLayer = frontDeadLayerR * mm;
     G4double sideDeadLayer = sideDeadLayerR * mm;
     G4double frontSpace = frontSpaceR * mm;
+    G4double capThickness = capThicknessR * mm;
 
     G4bool checkOverlaps = true;
 
@@ -49,7 +52,6 @@ G4VPhysicalVolume *EDetectorConstruction::Construct()
     G4double detectorSensitiveDiameter = detectorDiameter - 2 * sideDeadLayer;
     G4double detectorSensitiveLength = detectorLength - frontDeadLayer;
 
-    G4double capThickness = 1 * mm;
     G4double capOuterDiameter = 81 * mm;
     G4double capInnerDiamter = capOuterDiameter - 2 * capThickness;
     G4double capOuterLength = capThickness + frontSpace + detectorLength;
