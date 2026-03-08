@@ -28,6 +28,12 @@ front_dead_layer_lims = [1.0, 2.0] # mm
 front_space_lims = [3.0, 6.0] # mm
 cap_thickness_lims = [1.0, 2.0] # mm
 
+# final parameters
+# side_dead_layer_lims = [2.1, 2.1] # mm
+# front_dead_layer_lims = [1.6, 1.6] # mm
+# front_space_lims = [4.2, 4.2] # mm
+# cap_thickness_lims = [1.3, 1.3] # mm
+
 number_of_threads = 16
 build_folder = "build/"
 macro_name = "autorun.mac"

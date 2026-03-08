@@ -49,12 +49,34 @@ Data analysis is handled in a different directory (you need uproot, matplotlib, 
 
 Before: 
 
+    side_dead_layer = 0.7 # mm
+
+    front_dead_layer = 0.7 # mm
+
+    front_space = 3.0 # mm
+
+    cap_thickness = 1.0 # mm
+
 ![Efficiency before](/python/figures/comparison_old_model_efficiency.jpg)
+
+![Relative difference before](/python/figures/comparison_old_model_rel_deff.jpg)
 
 After: 
 
-![Efficiency after](/python/figures/comparison_best_model_efficiency.jpg)
+    side_dead_layer = 2.1 # mm
+
+    front_dead_layer = 1.6 # mm
+
+    front_space = 4.2 # mm
+    
+    cap_thickness = 1.3 # mm
+
+![Efficiency after](/python/figures/comparison_final_model_efficiency.jpg)
+
+![Relative difference after](/python/figures/comparison_final_model_rel_deff.jpg)
 
 ## Limitations
 
 The best-fitting result is still not perfect, so some additional tweaking is needed. Perhaps, to increase the thickness of the Al. 
+
+Several unanswered questions remain. How many parameters need to be adjusted? Would good results show up if just one is changed? Can this method be used with an optimizer? Will it overfit results? What if efficiencies are not measured with point sources but cylindrical sources? 

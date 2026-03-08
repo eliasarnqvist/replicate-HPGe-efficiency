@@ -13,7 +13,7 @@ meas_eff_unc = meas_eff_df["unc_eff"].to_numpy()
 
 # Simulated efficiencies
 number_of_events_per_run = 1e5 # need to know this for the simulation!
-simulation_path = "../geant4/resources/output_standard_detector_model.root"
+simulation_path = "../geant4/resources/output_improved_detector_model.root"
 simulation_file = uproot.open(simulation_path)
 # print(simulation_file.classnames())
 
@@ -53,7 +53,7 @@ ax.set_xlabel("Energy (keV)")
 ax.set_ylabel("Efficiency")
 ax.legend(frameon=False)
 plt.tight_layout(pad = 0.2)
-save_name = 'comparison_old_model_efficiency'
+save_name = 'comparison_final_model_efficiency'
 plt.savefig(f'figures/{save_name}.jpg', dpi=300)
 plt.savefig(f'figures/{save_name}.pdf')
 
@@ -64,7 +64,7 @@ ax.set_xlabel("Energy (keV)")
 ax.set_ylabel("Relative difference (%)")
 ax.legend(frameon=False, title=f"chi-squared: {chi_squared:.1f}")
 plt.tight_layout(pad = 0.2)
-save_name = 'comparison_old_model_rel_diff'
+save_name = 'comparison_final_model_rel_diff'
 plt.savefig(f'figures/{save_name}.jpg', dpi=300)
 plt.savefig(f'figures/{save_name}.pdf')
 
