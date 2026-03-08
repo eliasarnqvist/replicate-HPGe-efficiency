@@ -3,7 +3,7 @@
 High purity germanium (HPGe) gamma spectrometers are useful in many areas of nuclear science. They can, for instance, be used to determine the activity of a sample $A$, based on a measured peak count rate $c$, a gamma-ray intensity $I_\gamma$, and the detection efficiency $\varepsilon$ according to 
 
 $$
-A = \frac{c}{I_\gamma \varepsilon} .
+A = \dfrac{c}{I_\gamma \varepsilon} .
 $$
 
 The detection efficiency $\varepsilon$ is heavily affected by the detector design, source geometry, and the measured radionuclide (for example through true coincidence summing). A flexible way of determining $\varepsilon$ is through simulations. In such simulations, it is crucial that the response of the modeled detector matches the response of the real detector as closely as possible. 
@@ -78,6 +78,6 @@ After:
 
 ## Limitations
 
-The best-fitting result is still not perfect, so some additional tweaking is needed. Perhaps, to increase the thickness of the Al. 
+The best-fitting result is still not perfect, so some additional tweaking is needed. 
 
 Several unanswered questions remain. How many parameters need to be adjusted? Would good results show up if just one is changed? Can this method be used with an optimizer? Will it overfit results? What if efficiencies are not measured with point sources but cylindrical sources? 
