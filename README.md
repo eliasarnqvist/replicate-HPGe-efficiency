@@ -57,11 +57,10 @@ Before:
 
     cap_thickness = 1.0 # mm
 
-![Efficiency before](/python/figures/comparison_old_model_efficiency.jpg)
+<img src="/python/figures/comparison_old_model_efficiency.jpg" width="600">
 
-![Relative difference before](/python/figures/comparison_old_model_rel_diff.jpg)
+<img src="/python/figures/comparison_old_model_rel_diff.jpg" width="600">
 
-<img src="/python/figures/comparison_old_model_efficiency.jpg" width="200" height="100">
 
 After: 
 
@@ -73,9 +72,9 @@ After:
     
     cap_thickness = 1.3 # mm
 
-![Efficiency after](/python/figures/comparison_final_model_efficiency.jpg)
+<img src="/python/figures/comparison_final_model_efficiency.jpg" width="600">
 
-![Relative difference after](/python/figures/comparison_final_model_rel_diff.jpg)
+<img src="/python/figures/comparison_final_model_rel_diff.jpg" width="600">
 
 ## Limitations
 
