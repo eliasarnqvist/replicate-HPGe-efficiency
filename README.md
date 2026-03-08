@@ -59,7 +59,9 @@ Before:
 
 ![Efficiency before](/python/figures/comparison_old_model_efficiency.jpg)
 
-![Relative difference before](/python/figures/comparison_old_model_rel_deff.jpg)
+![Relative difference before](/python/figures/comparison_old_model_rel_diff.jpg)
+
+<img src="/python/figures/comparison_old_model_efficiency.jpg" width="200" height="100">
 
 After: 
 
@@ -73,7 +75,7 @@ After:
 
 ![Efficiency after](/python/figures/comparison_final_model_efficiency.jpg)
 
-![Relative difference after](/python/figures/comparison_final_model_rel_deff.jpg)
+![Relative difference after](/python/figures/comparison_final_model_rel_diff.jpg)
 
 ## Limitations
 
